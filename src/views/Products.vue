@@ -1,7 +1,7 @@
 <template>
   <div class="products">
     <h2> Our Products page</h2>
-    <product-compo-one :productList="productList"></product-compo-one>
+    <product-compo-one></product-compo-one>
     <!--
       <button v-on:click="IncreasePrice "> Increase price </button>
       <button v-on:click="DecreasePrice"> Decrease price </button><br/>

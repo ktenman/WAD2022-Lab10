@@ -14,11 +14,14 @@
 <script>
 export default {
   name: "ProductCompoOne",
-  props: ["productList"],
   data: function () {
     return {}
   },
-  computed: {}
+  computed: {
+    productList() {
+      return this.$store.state.productList
+    }
+  }
 }
 </script>
 
