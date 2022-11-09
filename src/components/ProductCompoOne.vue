@@ -2,7 +2,7 @@
   <div id="comp-list-one">
     <h1> Book list one</h1>
     <ul>
-      <li v-for="product in productList" :key="product.id" class="item">
+      <li v-for="product in productListSale" :key="product.id" class="item">
         <span class="author"> <b>Author:</b> {{ product.author }} </span> <br>
         <span class="book"> <b>Book:</b> {{ product.book }} </span> <br>
         <span class="goodreads"> <b>Goodreads:</b> {{ product.goodreads }} </span> <br>
@@ -20,6 +20,9 @@ export default {
   computed: {
     productList() {
       return this.$store.state.productList
+    },
+    productListSale() {
+      return this.$store.getters.productListSale
     }
   }
 }

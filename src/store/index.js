@@ -11,7 +11,17 @@ export default createStore({
             {id: 4, author: "Fyodor Dostoevsky", book: "Crime and Punishment", goodreads: "4.2/5", price: 18}
         ]
     },
-    getters: {},
+    getters: {
+        productListSale: state => {
+            const productListSale = state.productList.map(product => {
+                    const temp = structuredClone(product)
+                    temp.price = temp.price * 0.5
+                    return temp
+                }
+            )
+            return productListSale
+        }
+    },
     mutations: {},
     actions: {}
 })
