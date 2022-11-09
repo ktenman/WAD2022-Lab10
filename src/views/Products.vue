@@ -29,10 +29,10 @@ export default {
 
   methods: {
     increasePrice: function () {
-      this.$store.commit("increasePrice")
+      this.$store.dispatch("increasePriceAction")
     },
     decreasePrice: function () {
-
+      this.$store.commit("decreasePrice")
     }
 
   }

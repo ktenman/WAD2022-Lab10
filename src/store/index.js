@@ -26,7 +26,19 @@ export default createStore({
             state.productList.forEach(p => {
                 p.price += 1
             })
-        }
+        },
+        decreasePrice: state => {
+            state.productList.forEach(p => {
+                p.price -= 1
+            })
+        },
     },
-    actions: {}
+    actions: {
+        increasePriceAction: action => {
+            console.log("increasePriceAction clicked")
+            setTimeout(function () {
+                action.commit("increasePrice")
+            }, 1000)
+        }
+    }
 })
