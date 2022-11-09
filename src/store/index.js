@@ -13,15 +13,20 @@ export default createStore({
     },
     getters: {
         productListSale: state => {
-            const productListSale = state.productList.map(product => {
+            return state.productList.map(product => {
                     const temp = structuredClone(product)
                     temp.price = temp.price * 0.5
                     return temp
                 }
             )
-            return productListSale
         }
     },
-    mutations: {},
+    mutations: {
+        increasePrice: state => {
+            state.productList.forEach(p => {
+                p.price += 1
+            })
+        }
+    },
     actions: {}
 })

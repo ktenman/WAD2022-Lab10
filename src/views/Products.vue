@@ -2,10 +2,9 @@
   <div class="products">
     <h2> Our Products page</h2>
     <product-compo-one></product-compo-one>
-    <!--
-      <button v-on:click="IncreasePrice "> Increase price </button>
-      <button v-on:click="DecreasePrice"> Decrease price </button><br/>
-    -->
+    <button v-on:click="increasePrice"> Increase price</button>
+    <button v-on:click="decreasePrice"> Decrease price</button>
+    <br/>
     <product-compo-two :productList="productList"></product-compo-two>
   </div>
 </template>
@@ -29,17 +28,10 @@ export default {
   },
 
   methods: {
-    IncreasePrice: function () {
-      /*
-      When using the strict mode in the vuex store, we cannot mutate state outside mutation handlers.
-      Therefore, using the following function will produce an error
-
-      this.$store.state.productList.forEach(product => {
-          product.price += 1;
-          })
-      */
+    increasePrice: function () {
+      this.$store.commit("increasePrice")
     },
-    DecreasePrice: function () {
+    decreasePrice: function () {
 
     }
 
